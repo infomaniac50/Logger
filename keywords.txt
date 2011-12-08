@@ -1,0 +1,24 @@
+#######################################
+# Syntax Coloring Map SD
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Logger	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+init	KEYWORD2
+logData	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+SERIAL_OUTPUT	LITERAL1
+SD_OUTPUT	LITERAL1
+ASCII_BYTE	LITERAL1
+BINARY	LITERAL1
+ASCII_BOOL	LITERAL1
