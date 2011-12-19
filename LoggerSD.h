@@ -15,7 +15,11 @@
 #ifndef __SD_H__
 #define __SD_H__
 
-#include <Arduino.h>
+#if (ARDUINO >= 100)
+ #include "Arduino.h"
+#else
+ #include "WProgram.h"
+#endif
 
 #include <utility/SdFat.h>
 #include <utility/SdFatUtil.h>

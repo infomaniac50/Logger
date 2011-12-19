@@ -4,7 +4,6 @@
   Released into the public domain.
 */
 
-#include "Arduino.h"
 #include "Logger.h"
 #include <LoggerSD.h>
 
