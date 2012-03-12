@@ -7,11 +7,9 @@
 #include "Logger.h"
 #include <LoggerSD.h>
 
-#define CS 4
-
-
-Logger::Logger(log_outputs output, data_formats format, boolean add_line_break)
+Logger::Logger(log_outputs output, data_formats format, boolean add_line_break, uint chip_select)
 {
+  _chip_select = chip_select;
   _output = output;
   _format = format;
   _add_line_break = add_line_break;
@@ -44,7 +42,7 @@ int Logger::initSD()
   pinMode(10, OUTPUT);
 #endif
 
-  if (!SD.begin(CS)) {
+  if (!SD.begin(_chip_select)) {
     return 1;
   }
   
@@ -160,19 +158,19 @@ void Logger::logData(byte data)
   
   checkAddLineBreak();
   
-  if (_output == SERIAL_OUTPUT)
+  sync_counter++;
+  if (sync_counter >= 512)
   {
-    Serial.flush();
-  }
-  
-  if (_output == SD_OUTPUT)
-  {
-    sync_counter++;
-    if (sync_counter >= 2048)
+    if (_output == SD_OUTPUT)
     {
-      _file.flush();
-      sync_counter = 0;
+      _file.flush();      
     }
+    
+    if (_output == SERIAL_OUTPUT)
+    {
+      Serial.flush();
+    }    
+    sync_counter = 0;
   }
 }
 

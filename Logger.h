@@ -48,5 +48,6 @@ class Logger
     log_outputs _output;
     data_formats _format;
     boolean _add_line_break;
+    uint _chip_select;
 };
 #endif
