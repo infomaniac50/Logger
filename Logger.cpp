@@ -5,9 +5,8 @@
 */
 
 #include "Logger.h"
-#include <LoggerSD.h>
 
-Logger::Logger(log_outputs output, data_formats format, boolean add_line_break, uint chip_select)
+Logger::Logger(log_outputs output, data_formats format, boolean add_line_break, uint8_t chip_select)
 {
   _chip_select = chip_select;
   _output = output;

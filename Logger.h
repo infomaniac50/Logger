@@ -13,7 +13,7 @@
  #include "WProgram.h"
 #endif
 
-#include <LoggerSD.h>
+#include <SD.h>
 
 enum log_outputs
 {
@@ -31,7 +31,7 @@ enum data_formats
 class Logger
 {
   public:
-    Logger(log_outputs output, data_formats format, boolean add_line_break);
+    Logger(log_outputs output, data_formats format, boolean add_line_break, uint8_t chip_select);
     void logData(byte data);
     int init();
 //    void logData(int data);
@@ -48,6 +48,6 @@ class Logger
     log_outputs _output;
     data_formats _format;
     boolean _add_line_break;
-    uint _chip_select;
+    uint8_t _chip_select;
 };
 #endif
