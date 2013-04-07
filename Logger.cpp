@@ -1,7 +1,11 @@
 /*
-  Logger.cpp - Library for formatting and writing data to various outputs.
-  Created by Derek Chafin, December 5, 2011
-  Released into the public domain.
+Logger.cpp - A library for formatting and writing data to various outputs.
+Author: Derek Chafin
+Version: 1.0.1
+Modified: April 6, 2013
+License
+This work is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License.
+To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/3.0/.
 */
 
 #include "Logger.h"
